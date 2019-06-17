@@ -1,0 +1,28 @@
+<h1>All the tasks dor September 18th ....!</h1>
+
+
+<%
+=begin%>
+ <%= link_to  "ver carrito de compras", orders_path %> 
+<%
+=end%>
+
+
+
+
+<% @todos.each_slice(3) do |todos| %>
+   <div class='row'>
+      <% todos.each do |todo| %>
+         <div class='card'style="width: 18rem;"> 
+              <%= image_tag todo.taskphoto, class: 'card-img-top' %>
+               <div class="card-body">
+                  <h5 class="card-title"><%= todo.taskname %></h5>
+      
+              </div>
+         </div>
+      <% end %>
+   </div>
+<% end %>
+
+
+

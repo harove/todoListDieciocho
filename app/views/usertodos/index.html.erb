@@ -1,0 +1,31 @@
+    <% @usertodos.each_slice(3) do |usertodos| %>
+      <div class='row'>
+         <% usertodos.each do |usertodo| %>
+            <div class='card'style="width: 18rem;"> 
+               <%= image_tag usertodo.todo.taskphoto, class: 'card-img-top' %>
+               <div class="card-body">
+                  <h5 class="card-title"><%= usertodo.todo.taskname %></h5>
+                  <h6 class="card-subtitle"> <%= usertodo.completed %> </h6>
+
+
+                     <% if usertodo.completed %>   
+                           <%= button_to "undo task", usertodo_path(usertodo), class: 'btn btn-success', method: :patch %>                   
+                     <% else %>   
+                           <%= button_to "undo task", usertodo_path(usertodo), class: 'btn btn-danger', method: :patch %>  
+                     <% end %>  
+            
+               </div>
+            </div>
+         <% end %>
+      </div>
+   <% end %> 
+
+
+
+
+   
+   
+
+
+
+
