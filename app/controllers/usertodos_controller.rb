@@ -1,6 +1,13 @@
 class UsertodosController < ApplicationController
    before_action :authenticate_user!
    
+   def show
+      @usertodos = Usertodo.where({
+         todo_id: params[:id]
+      })
+   end
+
+
    def index
    
       @usertodos = Usertodo.where({

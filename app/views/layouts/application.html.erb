@@ -35,14 +35,20 @@
   <li class="nav-item active">  
       <%= link_to  "      see my todos", my_todos_path %>
  </li>
+ 
+ 
+ <li class="nav-item active">  
+   tasks done <%=   current_user.completed_count%>
+</li>
+ 
+
 
       <% else %>
         <li class="nav-item active" ><a href="<%= new_user_session_path %>"> Login </a></li>
         <li class="nav-item active"><a href="<%= new_user_registration_path %>"> Registro </a></li>
       <% end %>
 
-      <%= current_user.completed_count%>
-
+      
 
 
 
