@@ -2,9 +2,7 @@ class UsertodosController < ApplicationController
    before_action :authenticate_user!
    
    def show
-      @usertodos = Usertodo.where({
-         todo_id: params[:id]
-      })
+      @usertodos = Usertodo.where({todo_id: params[:id], completed: true})
    end
 
 
@@ -20,8 +18,6 @@ class UsertodosController < ApplicationController
 
 
    def update
-
-      
       usertodo = Usertodo.find(params[:id])
 
       if usertodo.completed
@@ -36,10 +32,8 @@ class UsertodosController < ApplicationController
             completed: true,
          })
       end
-
       usertodo.save
       redirect_to usertodos_path
-
    end   
 
    

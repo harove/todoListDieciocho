@@ -12,7 +12,6 @@
 
                   <h6 class="card-subtitle"> <%= usertodo.completed %> </h6>
 
-
                      <% if usertodo.completed %>   
                            <%= button_to "undo task", usertodo_path(usertodo), class: 'btn btn-success', method: :patch %>                   
                      <% else %>   
