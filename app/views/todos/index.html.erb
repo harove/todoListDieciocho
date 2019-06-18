@@ -1,14 +1,28 @@
-<h1>All the tasks dor September 18th ....!</h1>
+<h1>Tasks For September 18th ....!</h1>
+
+
+    <% @todos.each_slice(3) do |todos| %>
+      <div class='row'>
+         <% todos.each do |todo| %>
+            <div class='card'style="width: 18rem;"> 
+               <%= image_tag todo.taskphoto, class: 'card-img-top' %>
+               <div class="card-body">              
+                     <%= link_to "Completar", new_user_session_path, class: 'btn btn-danger'%>  
+               </div>
+            </div>
+         <% end %>
+      </div>
+   <% end %> 
+
+
+
+
+
 
 
 <%
 =begin%>
- <%= link_to  "ver carrito de compras", orders_path %> 
-<%
-=end%>
-
-
-
+ 
 
 <% @todos.each_slice(3) do |todos| %>
    <div class='row'>
@@ -22,7 +36,9 @@
          </div>
       <% end %>
    </div>
-<% end %>
+<% end %> 
+<%
+=end%>
 
 
 
