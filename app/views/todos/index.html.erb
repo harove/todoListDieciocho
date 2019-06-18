@@ -7,7 +7,9 @@
             <div class='card'style="width: 18rem;"> 
                <%= image_tag todo.taskphoto, class: 'card-img-top' %>
                <div class="card-body">              
-                     <%= link_to "Completar", new_user_session_path, class: 'btn btn-danger'%>  
+                   
+                  <h5 class="card-title">  <%=todo.taskname %>  </h5>
+
                </div>
             </div>
          <% end %>
